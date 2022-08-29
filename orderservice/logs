@@ -1,0 +1,951 @@
+2022-08-29 13:02:08.984  INFO 28101 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 13:02:08.995  INFO 28101 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@43599640: startup date [Mon Aug 29 13:02:08 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@c267ef4
+2022-08-29 13:02:09.576  INFO 28101 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=360558f0-d3b7-3351-8f21-281bac1ec561
+2022-08-29 13:02:09.616  INFO 28101 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 13:02:09.829  INFO 28101 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$93389fd2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 13:02:10.350  INFO 28101 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-29 13:02:10.430  INFO 28101 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 13:02:10.433  INFO 28101 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 13:02:10.447  INFO 28101 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 13:02:10.564  INFO 28101 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 13:02:10.565  INFO 28101 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1570 ms
+2022-08-29 13:02:10.743  INFO 28101 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 13:02:10.749  INFO 28101 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 13:02:10.749  INFO 28101 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 13:02:10.750  INFO 28101 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 13:02:10.751  INFO 28101 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 13:02:11.304  INFO 28101 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 13:02:11.305  INFO 28101 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 13:02:11.307  INFO 28101 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 13:02:11.327  INFO 28101 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@680d4a6a
+2022-08-29 13:02:11.502  INFO 28101 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182
+2022-08-29 13:02:11.503  INFO 28101 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 13:02:11.743  INFO 28101 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 13:02:11.755  INFO 28101 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 13:02:11.756  INFO 28101 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 13:02:11.757  INFO 28101 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 13:02:11.778  INFO 28101 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@680d4a6a
+2022-08-29 13:02:11.786  INFO 28101 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182
+2022-08-29 13:02:11.790  INFO 28101 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 13:02:11.807  WARN 28101 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderConsumer' defined in class path resource [com/example/orderservice/RMQ/Consumer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.rocketmq.client.consumer.DefaultMQPushConsumer]: Factory method 'getOrderConsumer' threw exception; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+2022-08-29 13:02:11.825  INFO 28101 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-29 13:02:11.865  INFO 28101 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-29 13:02:11.876 ERROR 28101 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderConsumer' defined in class path resource [com/example/orderservice/RMQ/Consumer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.rocketmq.client.consumer.DefaultMQPushConsumer]: Factory method 'getOrderConsumer' threw exception; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:587) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1254) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at com.example.orderservice.OrderserviceApplication.main(OrderserviceApplication.java:10) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.rocketmq.client.consumer.DefaultMQPushConsumer]: Factory method 'getOrderConsumer' threw exception; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	... 18 common frames omitted
+Caused by: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:679) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:509) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:871) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:654) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:706) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at com.example.orderservice.RMQ.Consumer.getOrderConsumer(Consumer.java:33) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_333]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_333]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_333]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_333]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	... 19 common frames omitted
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.getAndCreateNameserverChannel(NettyRemotingClient.java:445) ~[rocketmq-remoting-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.getAndCreateChannel(NettyRemotingClient.java:400) ~[rocketmq-remoting-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:369) ~[rocketmq-remoting-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1367) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1357) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:622) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	... 29 common frames omitted
+
+2022-08-29 13:48:51.668  INFO 30014 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 13:48:51.685  INFO 30014 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61eaec38: startup date [Mon Aug 29 13:48:51 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@402bba4f
+2022-08-29 13:48:52.351  INFO 30014 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b454ca9a-390a-3d2c-838e-c0063f82d1e1
+2022-08-29 13:48:52.369  INFO 30014 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 13:48:52.539  INFO 30014 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$12891d9c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 13:48:52.893  INFO 30014 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-29 13:48:52.930  INFO 30014 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 13:48:52.931  INFO 30014 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 13:48:52.945  INFO 30014 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 13:48:53.080  INFO 30014 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 13:48:53.081  INFO 30014 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1396 ms
+2022-08-29 13:48:53.260  INFO 30014 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 13:48:53.265  INFO 30014 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 13:48:53.266  INFO 30014 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 13:48:53.267  INFO 30014 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 13:48:53.268  INFO 30014 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 13:48:53.897  INFO 30014 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 13:48:53.899  INFO 30014 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 13:48:53.900  INFO 30014 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 13:48:53.931  INFO 30014 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@65ec8b24
+2022-08-29 13:48:54.184  INFO 30014 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182
+2022-08-29 13:48:54.184  INFO 30014 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 13:48:54.420  INFO 30014 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 13:48:54.485  WARN 30014 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 13:48:54.504  WARN 30014 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 13:48:54.504  INFO 30014 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 13:48:54.510  WARN 30014 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 13:48:54.511  INFO 30014 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 13:48:54.609  INFO 30014 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 13:48:54.898  INFO 30014 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61eaec38: startup date [Mon Aug 29 13:48:51 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@402bba4f
+2022-08-29 13:48:54.985  INFO 30014 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[GET]}" onto public void com.example.orderservice.Controller.OrderController.test()
+2022-08-29 13:48:54.990  INFO 30014 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 13:48:54.991  INFO 30014 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 13:48:55.032  INFO 30014 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 13:48:55.034  INFO 30014 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 13:48:55.394  INFO 30014 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-29 13:48:55.644  INFO 30014 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-29 13:48:55.658  INFO 30014 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-29 13:48:55.659  INFO 30014 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-29 13:48:55.662  INFO 30014 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-29 13:48:55.666  INFO 30014 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-29 13:48:55.697  INFO 30014 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-29 13:48:55.717  INFO 30014 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=61eaec38,type=ConfigurationPropertiesRebinder]
+2022-08-29 13:48:55.735  INFO 30014 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-29 13:48:55.872  INFO 30014 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-29 13:48:55.894  INFO 30014 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='order', name='application', tags=[secure=false], address='10.70.176.182', port=8080, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://10.70.176.182:8080/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-29 13:48:55.935  INFO 30014 --- [main] c.e.o.OrderserviceApplication            : Started OrderserviceApplication in 5.776 seconds (JVM running for 6.365)
+2022-08-29 13:48:57.046  INFO 30014 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2022-08-29 13:48:57.046  INFO 30014 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2022-08-29 13:48:57.062  INFO 30014 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2022-08-29 13:49:22.190  INFO 30014 --- [Thread-10] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61eaec38: startup date [Mon Aug 29 13:48:51 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@402bba4f
+2022-08-29 13:49:22.193  INFO 30014 --- [Thread-10] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-29 13:49:22.194  INFO 30014 --- [Thread-10] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: order
+2022-08-29 13:49:22.203  INFO 30014 --- [Thread-10] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-29 13:49:22.204  INFO 30014 --- [Thread-10] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-29 13:49:22.206  INFO 30014 --- [Thread-10] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2022-08-29 14:04:38.261  INFO 32165 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 14:04:38.271  INFO 32165 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3e2059ae: startup date [Mon Aug 29 14:04:38 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@56620197
+2022-08-29 14:04:38.750  INFO 32165 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=360558f0-d3b7-3351-8f21-281bac1ec561
+2022-08-29 14:04:38.762  INFO 32165 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 14:04:38.861  INFO 32165 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e6aaed77] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 14:04:39.087  INFO 32165 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-29 14:04:39.113  INFO 32165 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 14:04:39.113  INFO 32165 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 14:04:39.128  INFO 32165 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 14:04:39.213  INFO 32165 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 14:04:39.214  INFO 32165 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 943 ms
+2022-08-29 14:04:39.317  INFO 32165 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 14:04:39.321  INFO 32165 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 14:04:39.321  INFO 32165 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 14:04:39.321  INFO 32165 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 14:04:39.321  INFO 32165 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 14:04:39.851  INFO 32165 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 14:04:39.852  INFO 32165 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 14:04:39.854  INFO 32165 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 14:04:39.888  INFO 32165 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@598260a6
+2022-08-29 14:04:40.005  INFO 32165 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182
+2022-08-29 14:04:40.005  INFO 32165 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 14:04:40.184  INFO 32165 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 14:04:40.194  INFO 32165 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 14:04:40.195  INFO 32165 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 14:04:40.196  INFO 32165 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 14:04:40.207  INFO 32165 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@598260a6
+2022-08-29 14:04:40.210  INFO 32165 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182
+2022-08-29 14:04:40.213  INFO 32165 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 14:04:40.230  WARN 32165 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderConsumer' defined in class path resource [com/example/orderservice/RMQ/Consumer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.rocketmq.client.consumer.DefaultMQPushConsumer]: Factory method 'getOrderConsumer' threw exception; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+2022-08-29 14:04:40.238  INFO 32165 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-29 14:04:40.267  INFO 32165 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-29 14:04:40.276 ERROR 32165 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderConsumer' defined in class path resource [com/example/orderservice/RMQ/Consumer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.rocketmq.client.consumer.DefaultMQPushConsumer]: Factory method 'getOrderConsumer' threw exception; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:587) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1254) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at com.example.orderservice.OrderserviceApplication.main(OrderserviceApplication.java:10) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.rocketmq.client.consumer.DefaultMQPushConsumer]: Factory method 'getOrderConsumer' threw exception; nested exception is java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	... 18 common frames omitted
+Caused by: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:679) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:509) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:871) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:654) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:706) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at com.example.orderservice.RMQ.Consumer.getOrderConsumer(Consumer.java:33) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_333]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_333]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_333]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_333]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	... 19 common frames omitted
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to [10.70.176.182] failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.getAndCreateNameserverChannel(NettyRemotingClient.java:445) ~[rocketmq-remoting-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.getAndCreateChannel(NettyRemotingClient.java:400) ~[rocketmq-remoting-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:369) ~[rocketmq-remoting-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1367) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1357) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:622) ~[rocketmq-client-4.9.2.jar:4.9.2]
+	... 29 common frames omitted
+
+2022-08-29 14:11:12.501  INFO 33785 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 14:11:12.518  INFO 33785 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3e2059ae: startup date [Mon Aug 29 14:11:12 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@56620197
+2022-08-29 14:11:13.067  INFO 33785 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=360558f0-d3b7-3351-8f21-281bac1ec561
+2022-08-29 14:11:13.087  INFO 33785 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 14:11:13.199  INFO 33785 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e6aaed77] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 14:11:13.418  INFO 33785 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-29 14:11:13.439  INFO 33785 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 14:11:13.439  INFO 33785 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 14:11:13.450  INFO 33785 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 14:11:13.527  INFO 33785 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 14:11:13.528  INFO 33785 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1010 ms
+2022-08-29 14:11:13.642  INFO 33785 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 14:11:13.645  INFO 33785 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 14:11:13.646  INFO 33785 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 14:11:13.646  INFO 33785 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 14:11:13.646  INFO 33785 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 14:11:14.220  INFO 33785 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 14:11:14.221  INFO 33785 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 14:11:14.222  INFO 33785 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 14:11:14.240  INFO 33785 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@5f18f9d2
+2022-08-29 14:11:14.336  INFO 33785 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182, port 9876
+2022-08-29 14:11:14.336  INFO 33785 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 14:11:14.466  INFO 33785 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 14:11:14.474  INFO 33785 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 14:11:14.475  INFO 33785 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 14:11:14.475  INFO 33785 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 14:11:14.486  INFO 33785 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@5f18f9d2
+2022-08-29 14:11:14.493  INFO 33785 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182, port 9876
+2022-08-29 14:11:14.495  INFO 33785 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 14:11:14.727  INFO 33785 --- [main] com.example.orderservice.RMQ.Consumer    : consumer start success
+2022-08-29 14:11:14.757  WARN 33785 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 14:11:14.763  WARN 33785 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 14:11:14.763  INFO 33785 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 14:11:14.785  WARN 33785 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 14:11:14.785  INFO 33785 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 14:11:14.889  INFO 33785 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 14:11:15.091  INFO 33785 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3e2059ae: startup date [Mon Aug 29 14:11:12 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@56620197
+2022-08-29 14:11:15.188  INFO 33785 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[GET]}" onto public void com.example.orderservice.Controller.OrderController.test()
+2022-08-29 14:11:15.191  INFO 33785 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 14:11:15.192  INFO 33785 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 14:11:15.222  INFO 33785 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 14:11:15.222  INFO 33785 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 14:11:15.487  INFO 33785 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-29 14:11:15.669  INFO 33785 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-29 14:11:15.676  INFO 33785 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-29 14:11:15.676  INFO 33785 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-29 14:11:15.677  INFO 33785 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-29 14:11:15.679  INFO 33785 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-29 14:11:15.690  INFO 33785 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-29 14:11:15.698  INFO 33785 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=3e2059ae,type=ConfigurationPropertiesRebinder]
+2022-08-29 14:11:15.710  INFO 33785 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-29 14:11:15.742  INFO 33785 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-29 14:11:15.762  INFO 33785 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='order', name='application', tags=[secure=false], address='10.70.176.182', port=8080, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://10.70.176.182:8080/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-29 14:11:15.787  INFO 33785 --- [main] c.e.o.OrderserviceApplication            : Started OrderserviceApplication in 4.067 seconds (JVM running for 4.71)
+2022-08-29 14:11:25.231  INFO 33785 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2022-08-29 14:11:25.231  INFO 33785 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2022-08-29 14:11:25.249  INFO 33785 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2022-08-29 14:12:46.582  INFO 33785 --- [Thread-12] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3e2059ae: startup date [Mon Aug 29 14:11:12 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@56620197
+2022-08-29 14:12:46.585  INFO 33785 --- [Thread-12] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-29 14:12:46.586  INFO 33785 --- [Thread-12] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: order
+2022-08-29 14:12:46.593  INFO 33785 --- [Thread-12] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-29 14:12:46.593  INFO 33785 --- [Thread-12] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-29 14:12:46.594  INFO 33785 --- [Thread-12] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2022-08-29 14:12:46.613  INFO 33785 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[10.70.176.182:9876] result: true
+2022-08-29 14:12:46.616  INFO 33785 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[10.70.176.182:10911] result: true
+2022-08-29 14:12:46.641  INFO 33785 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[10.70.176.182:10911] result: true
+2022-08-29 14:12:46.641  INFO 33785 --- [NettyClientSelector_1] RocketmqRemoting                         : closeChannel: close the connection to remote address[10.70.176.182:9876] result: true
+2022-08-29 18:00:25.938  INFO 64463 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 18:00:25.955  INFO 64463 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6d026701: startup date [Mon Aug 29 18:00:25 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@52e6fdee
+2022-08-29 18:00:26.590  WARN 64463 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.orderservice]' package. Please check your configuration.
+2022-08-29 18:00:26.603  INFO 64463 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'dataSource' with a different definition: replacing [Root bean: class [null]; scope=refresh; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=false; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]] with [Root bean: class [org.springframework.aop.scope.ScopedProxyFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in BeanDefinition defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]]
+2022-08-29 18:00:26.869  INFO 64463 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dd41abcc-efb7-3c55-82e0-b5247695b6b2
+2022-08-29 18:00:26.879  INFO 64463 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 18:00:26.989  INFO 64463 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4a43c527] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 18:00:27.020  INFO 64463 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$665dc824] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 18:00:27.285  INFO 64463 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-29 18:00:27.317  INFO 64463 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 18:00:27.318  INFO 64463 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 18:00:27.327  INFO 64463 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 18:00:27.412  INFO 64463 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 18:00:27.412  INFO 64463 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1457 ms
+2022-08-29 18:00:27.582  INFO 64463 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 18:00:27.586  INFO 64463 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 18:00:27.586  INFO 64463 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 18:00:27.586  INFO 64463 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 18:00:27.587  INFO 64463 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 18:00:28.198  INFO 64463 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 18:00:28.199  INFO 64463 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 18:00:28.201  INFO 64463 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 18:00:28.241  INFO 64463 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@4554de02
+2022-08-29 18:00:28.465  INFO 64463 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182, port 9876
+2022-08-29 18:00:28.483  INFO 64463 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 18:00:29.016  INFO 64463 --- [main] com.example.orderservice.RMQ.Consumer    : consumer start success
+2022-08-29 18:00:29.022  INFO 64463 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 18:00:29.024  INFO 64463 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 18:00:29.024  INFO 64463 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 18:00:29.026  INFO 64463 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@4554de02
+2022-08-29 18:00:29.038  INFO 64463 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182, port 9876
+2022-08-29 18:00:29.038  INFO 64463 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 18:00:29.053  INFO 64463 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 18:00:29.187  WARN 64463 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 18:00:29.193  WARN 64463 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:00:29.193  INFO 64463 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:00:29.203  WARN 64463 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:00:29.204  INFO 64463 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:00:29.323  INFO 64463 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:00:29.655  INFO 64463 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6d026701: startup date [Mon Aug 29 18:00:25 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@52e6fdee
+2022-08-29 18:00:29.780  INFO 64463 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[POST]}" onto public com.example.orderservice.Result.CodeMsg com.example.orderservice.Controller.OrderController.setOrder(com.example.orderservice.Data.Order.OrderInfo,javax.servlet.http.HttpServletRequest)
+2022-08-29 18:00:29.784  INFO 64463 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 18:00:29.785  INFO 64463 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 18:00:29.847  INFO 64463 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:00:29.848  INFO 64463 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:00:29.877  INFO 64463 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-29 18:00:30.074  WARN 64463 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration$Hikari': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scopedTarget.dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-08-29 18:00:30.171  INFO 64463 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-29 18:00:30.207  INFO 64463 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-29 18:00:30.211 ERROR 64463 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2022-08-29 18:01:20.100  INFO 64653 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 18:01:20.113  INFO 64653 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@67b9b51a: startup date [Mon Aug 29 18:01:20 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5f058f00
+2022-08-29 18:01:20.825  INFO 64653 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=25961249-eff4-3ac0-b880-e3de751ca2a0
+2022-08-29 18:01:20.839  INFO 64653 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 18:01:20.975  INFO 64653 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$46c4e577] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 18:01:21.314  INFO 64653 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-29 18:01:21.374  INFO 64653 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 18:01:21.375  INFO 64653 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 18:01:21.397  INFO 64653 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 18:01:21.517  INFO 64653 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 18:01:21.518  INFO 64653 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1405 ms
+2022-08-29 18:01:21.730  INFO 64653 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 18:01:21.741  INFO 64653 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 18:01:21.741  INFO 64653 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 18:01:21.742  INFO 64653 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 18:01:21.742  INFO 64653 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 18:01:22.422  INFO 64653 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 18:01:22.423  INFO 64653 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 18:01:22.426  INFO 64653 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 18:01:22.451  INFO 64653 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@b0e5507
+2022-08-29 18:01:22.591  INFO 64653 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182, port 9876
+2022-08-29 18:01:22.598  INFO 64653 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 18:01:23.073  INFO 64653 --- [main] com.example.orderservice.RMQ.Consumer    : consumer start success
+2022-08-29 18:01:23.078  INFO 64653 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 18:01:23.079  INFO 64653 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 18:01:23.079  INFO 64653 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 18:01:23.080  INFO 64653 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@b0e5507
+2022-08-29 18:01:23.091  INFO 64653 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182, port 9876
+2022-08-29 18:01:23.091  INFO 64653 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 18:01:23.100  INFO 64653 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 18:01:23.147  WARN 64653 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 18:01:23.152  WARN 64653 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:01:23.152  INFO 64653 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:01:23.163  WARN 64653 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:01:23.164  INFO 64653 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:01:23.339  INFO 64653 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:01:23.580  INFO 64653 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@67b9b51a: startup date [Mon Aug 29 18:01:20 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5f058f00
+2022-08-29 18:01:23.715  INFO 64653 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[POST]}" onto public com.example.orderservice.Result.CodeMsg com.example.orderservice.Controller.OrderController.setOrder(com.example.orderservice.Data.Order.OrderInfo,javax.servlet.http.HttpServletRequest)
+2022-08-29 18:01:23.726  INFO 64653 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 18:01:23.728  INFO 64653 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 18:01:23.791  INFO 64653 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:01:23.792  INFO 64653 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:01:23.824  INFO 64653 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-29 18:01:24.190  INFO 64653 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-29 18:01:24.403  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-29 18:01:24.411  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-29 18:01:24.412  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-29 18:01:24.413  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-29 18:01:24.416  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-29 18:01:24.426  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-29 18:01:24.435  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=67b9b51a,type=ConfigurationPropertiesRebinder]
+2022-08-29 18:01:24.447  INFO 64653 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-29 18:01:24.479 ERROR 64653 --- [main] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243) [spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at com.example.orderservice.OrderserviceApplication.main(OrderserviceApplication.java:14) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	... 13 common frames omitted
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_333]
+	at sun.nio.ch.Net.bind(Net.java:438) ~[na:1.8.0_333]
+	at sun.nio.ch.Net.bind(Net.java:430) ~[na:1.8.0_333]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:225) ~[na:1.8.0_333]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_333]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	... 14 common frames omitted
+
+2022-08-29 18:01:24.489  INFO 64653 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-29 18:01:24.593  INFO 64653 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-29 18:01:24.595 ERROR 64653 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2022-08-29 18:01:24.599  INFO 64653 --- [main] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@67b9b51a: startup date [Mon Aug 29 18:01:20 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5f058f00
+2022-08-29 18:01:24.604  INFO 64653 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-29 18:01:24.607  INFO 64653 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-29 18:01:24.613  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-29 18:01:24.616  INFO 64653 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2022-08-29 18:02:32.807  INFO 64849 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 18:02:32.820  INFO 64849 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5026735c: startup date [Mon Aug 29 18:02:32 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@7ec7ffd3
+2022-08-29 18:02:33.531  INFO 64849 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=25961249-eff4-3ac0-b880-e3de751ca2a0
+2022-08-29 18:02:33.545  INFO 64849 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 18:02:33.638  INFO 64849 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$831f5d89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 18:02:33.958  INFO 64849 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2022-08-29 18:02:33.989  INFO 64849 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 18:02:33.990  INFO 64849 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 18:02:34.009  INFO 64849 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 18:02:34.125  INFO 64849 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 18:02:34.125  INFO 64849 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1305 ms
+2022-08-29 18:02:34.332  INFO 64849 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 18:02:34.340  INFO 64849 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 18:02:34.341  INFO 64849 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 18:02:34.342  INFO 64849 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 18:02:34.346  INFO 64849 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 18:02:34.979  INFO 64849 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 18:02:34.980  INFO 64849 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 18:02:34.982  INFO 64849 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 18:02:35.006  INFO 64849 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@173797f0
+2022-08-29 18:02:35.157  INFO 64849 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182, port 9876
+2022-08-29 18:02:35.163  INFO 64849 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 18:02:35.597  INFO 64849 --- [main] com.example.orderservice.RMQ.Consumer    : consumer start success
+2022-08-29 18:02:35.601  INFO 64849 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 18:02:35.602  INFO 64849 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 18:02:35.602  INFO 64849 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 18:02:35.603  INFO 64849 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@173797f0
+2022-08-29 18:02:35.608  INFO 64849 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182, port 9876
+2022-08-29 18:02:35.608  INFO 64849 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 18:02:35.616  INFO 64849 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 18:02:35.688  WARN 64849 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 18:02:35.699  WARN 64849 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:02:35.700  INFO 64849 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:02:35.711  WARN 64849 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:02:35.713  INFO 64849 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:02:35.841  INFO 64849 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:02:36.142  INFO 64849 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5026735c: startup date [Mon Aug 29 18:02:32 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@7ec7ffd3
+2022-08-29 18:02:36.277  INFO 64849 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[POST]}" onto public com.example.orderservice.Result.CodeMsg com.example.orderservice.Controller.OrderController.setOrder(com.example.orderservice.Data.Order.OrderInfo,javax.servlet.http.HttpServletRequest)
+2022-08-29 18:02:36.280  INFO 64849 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 18:02:36.280  INFO 64849 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 18:02:36.312  INFO 64849 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:02:36.313  INFO 64849 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:02:36.349  INFO 64849 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-29 18:02:36.657  INFO 64849 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-29 18:02:36.844  INFO 64849 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-29 18:02:36.852  INFO 64849 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-29 18:02:36.853  INFO 64849 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-29 18:02:36.853  INFO 64849 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-29 18:02:36.856  INFO 64849 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-29 18:02:36.867  INFO 64849 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-29 18:02:36.883  INFO 64849 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=5026735c,type=ConfigurationPropertiesRebinder]
+2022-08-29 18:02:36.903  INFO 64849 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-29 18:02:36.955  INFO 64849 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2022-08-29 18:02:36.999  INFO 64849 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='order', name='application', tags=[secure=false], address='10.70.176.182', port=8090, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://10.70.176.182:8090/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-29 18:02:37.024  INFO 64849 --- [main] c.e.o.OrderserviceApplication            : Started OrderserviceApplication in 5.096 seconds (JVM running for 5.514)
+2022-08-29 18:02:37.033  INFO 64849 --- [main] c.e.database.Datasource.DataSource       : start init mybatis connection pool,service: mysql
+2022-08-29 18:02:37.036  INFO 64849 --- [main] c.e.database.Discover.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@173797f0
+2022-08-29 18:02:37.041  INFO 64849 --- [main] c.e.database.Datasource.DataSource       : service host10.70.176.182,servie port3306
+2022-08-29 18:02:37.043  INFO 64849 --- [main] com.example.database.Datasource.Builder  : datasource url is jdbc:mysql://10.70.176.182:3306/myDatas?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+2022-08-29 18:02:37.146  INFO 64849 --- [main] c.e.r.RedisDataSource.RedisService       : begin init redisDataSource, name=redis
+2022-08-29 18:02:37.149  INFO 64849 --- [main] c.e.r.DiscoverService.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@173797f0
+2022-08-29 18:02:37.155  INFO 64849 --- [main] c.e.r.RedisDataSource.RedisService       : find instance,nameredis, host:10.70.176.182, port:8084 
+2022-08-29 18:02:37.180  INFO 64849 --- [main] c.e.r.RedisDataSource.RedisService       : get jedisPool success
+2022-08-29 18:02:42.892  INFO 64849 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2022-08-29 18:02:42.892  INFO 64849 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2022-08-29 18:02:42.907  INFO 64849 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2022-08-29 18:15:04.651  INFO 64849 --- [http-nio-8090-exec-7] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 18:15:04.679 ERROR 64849 --- [http-nio-8090-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null] with root cause
+
+redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null
+	at redis.clients.util.SafeEncoder.encode(SafeEncoder.java:28) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:115) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Jedis.get(Jedis.java:152) ~[jedis-2.9.0.jar:na]
+	at com.example.orderservice.Service.UserService.getUserByToken(UserService.java:31) ~[classes/:na]
+	at com.example.orderservice.Controller.OrderController.setOrder(OrderController.java:35) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_333]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_333]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_333]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_333]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_333]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_333]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_333]
+
+2022-08-29 18:18:29.794  INFO 64849 --- [Thread-15] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5026735c: startup date [Mon Aug 29 18:02:32 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@7ec7ffd3
+2022-08-29 18:18:29.800  INFO 64849 --- [Thread-15] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-29 18:18:29.801  INFO 64849 --- [Thread-15] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: order
+2022-08-29 18:18:29.813  INFO 64849 --- [Thread-15] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-29 18:18:29.814  INFO 64849 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-29 18:18:29.815  INFO 64849 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2022-08-29 18:18:31.938  INFO 67079 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 18:18:31.950  INFO 67079 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3406472c: startup date [Mon Aug 29 18:18:31 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f6ee6e4
+2022-08-29 18:18:32.745  INFO 67079 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=25961249-eff4-3ac0-b880-e3de751ca2a0
+2022-08-29 18:18:32.757  INFO 67079 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 18:18:32.859  INFO 67079 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ecfaff4f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 18:18:33.262  INFO 67079 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2022-08-29 18:18:33.293  INFO 67079 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 18:18:33.294  INFO 67079 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 18:18:33.317  INFO 67079 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 18:18:33.423  INFO 67079 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 18:18:33.425  INFO 67079 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1475 ms
+2022-08-29 18:18:33.679  INFO 67079 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 18:18:33.683  INFO 67079 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 18:18:33.683  INFO 67079 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 18:18:33.684  INFO 67079 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 18:18:33.684  INFO 67079 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 18:18:34.316  INFO 67079 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 18:18:34.317  INFO 67079 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 18:18:34.318  INFO 67079 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 18:18:34.340  INFO 67079 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@31d6f3fe
+2022-08-29 18:18:34.470  INFO 67079 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182, port 9876
+2022-08-29 18:18:34.478  INFO 67079 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 18:18:34.955  INFO 67079 --- [main] com.example.orderservice.RMQ.Consumer    : consumer start success
+2022-08-29 18:18:34.960  INFO 67079 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 18:18:34.960  INFO 67079 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 18:18:34.960  INFO 67079 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 18:18:34.961  INFO 67079 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@31d6f3fe
+2022-08-29 18:18:34.967  INFO 67079 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182, port 9876
+2022-08-29 18:18:34.968  INFO 67079 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 18:18:34.974  INFO 67079 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 18:18:35.057  WARN 67079 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 18:18:35.066  WARN 67079 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:18:35.067  INFO 67079 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:18:35.083  WARN 67079 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 18:18:35.083  INFO 67079 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 18:18:35.193  INFO 67079 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:18:35.516  INFO 67079 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3406472c: startup date [Mon Aug 29 18:18:31 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f6ee6e4
+2022-08-29 18:18:35.768  INFO 67079 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[POST]}" onto public com.example.orderservice.Result.CodeMsg com.example.orderservice.Controller.OrderController.setOrder(com.example.orderservice.Data.Order.OrderInfo,javax.servlet.http.HttpServletRequest)
+2022-08-29 18:18:35.774  INFO 67079 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 18:18:35.775  INFO 67079 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 18:18:35.844  INFO 67079 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:18:35.847  INFO 67079 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 18:18:35.884  INFO 67079 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-29 18:18:36.267  INFO 67079 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-29 18:18:36.459  INFO 67079 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-29 18:18:36.467  INFO 67079 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-29 18:18:36.467  INFO 67079 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-29 18:18:36.468  INFO 67079 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-29 18:18:36.471  INFO 67079 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-29 18:18:36.482  INFO 67079 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-29 18:18:36.491  INFO 67079 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=3406472c,type=ConfigurationPropertiesRebinder]
+2022-08-29 18:18:36.507  INFO 67079 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-29 18:18:36.579  INFO 67079 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2022-08-29 18:18:36.599  INFO 67079 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='order', name='application', tags=[secure=false], address='10.70.176.182', port=8090, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://10.70.176.182:8090/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-29 18:18:36.655  INFO 67079 --- [main] c.e.o.OrderserviceApplication            : Started OrderserviceApplication in 5.862 seconds (JVM running for 6.368)
+2022-08-29 18:18:36.659  INFO 67079 --- [main] c.e.database.Datasource.DataSource       : start init mybatis connection pool,service: mysql
+2022-08-29 18:18:36.660  INFO 67079 --- [main] c.e.database.Discover.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@31d6f3fe
+2022-08-29 18:18:36.673  INFO 67079 --- [main] c.e.database.Datasource.DataSource       : service host10.70.176.182,servie port3306
+2022-08-29 18:18:36.675  INFO 67079 --- [main] com.example.database.Datasource.Builder  : datasource url is jdbc:mysql://10.70.176.182:3306/myDatas?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+2022-08-29 18:18:36.766  INFO 67079 --- [main] c.e.r.RedisDataSource.RedisService       : begin init redisDataSource, name=redis
+2022-08-29 18:18:36.772  INFO 67079 --- [main] c.e.r.DiscoverService.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@31d6f3fe
+2022-08-29 18:18:36.777  INFO 67079 --- [main] c.e.r.RedisDataSource.RedisService       : find instance,nameredis, host:10.70.176.182, port:8084 
+2022-08-29 18:18:36.810  INFO 67079 --- [main] c.e.r.RedisDataSource.RedisService       : get jedisPool success
+2022-08-29 18:18:37.516  INFO 67079 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2022-08-29 18:18:37.516  INFO 67079 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2022-08-29 18:18:37.533  INFO 67079 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2022-08-29 18:18:40.048  INFO 67079 --- [http-nio-8090-exec-3] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 18:18:40.092 ERROR 67079 --- [http-nio-8090-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is redis.clients.jedis.exceptions.JedisNoScriptException: NOSCRIPT No matching script. Please use EVAL.] with root cause
+
+redis.clients.jedis.exceptions.JedisNoScriptException: NOSCRIPT No matching script. Please use EVAL.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:125) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:161) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:215) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Connection.getOne(Connection.java:322) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Jedis.getEvalResult(Jedis.java:2731) ~[jedis-2.9.0.jar:na]
+	at redis.clients.jedis.Jedis.evalsha(Jedis.java:2757) ~[jedis-2.9.0.jar:na]
+	at com.example.orderservice.Service.OrderService.setOrder(OrderService.java:24) ~[classes/:na]
+	at com.example.orderservice.Controller.OrderController.setOrder(OrderController.java:41) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_333]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_333]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_333]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_333]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_333]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_333]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_333]
+
+2022-08-29 19:48:21.322  INFO 67079 --- [Thread-15] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3406472c: startup date [Mon Aug 29 18:18:31 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f6ee6e4
+2022-08-29 19:48:21.397  INFO 67079 --- [Thread-15] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-29 19:48:21.400  INFO 67079 --- [Thread-15] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: order
+2022-08-29 19:48:21.411  INFO 67079 --- [Thread-15] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-29 19:48:21.413  INFO 67079 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-29 19:48:21.416  INFO 67079 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2022-08-29 20:02:26.964  INFO 75340 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 20:02:26.978  INFO 75340 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@68f4865: startup date [Mon Aug 29 20:02:26 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4466af20
+2022-08-29 20:02:27.630  INFO 75340 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=25961249-eff4-3ac0-b880-e3de751ca2a0
+2022-08-29 20:02:27.644  INFO 75340 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 20:02:27.761  INFO 75340 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a7f83b52] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 20:02:28.144  INFO 75340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2022-08-29 20:02:28.177  INFO 75340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 20:02:28.178  INFO 75340 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 20:02:28.213  INFO 75340 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 20:02:28.335  INFO 75340 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 20:02:28.336  INFO 75340 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1357 ms
+2022-08-29 20:02:28.546  INFO 75340 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 20:02:28.552  INFO 75340 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 20:02:28.552  INFO 75340 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 20:02:28.552  INFO 75340 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 20:02:28.552  INFO 75340 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 20:02:29.320  INFO 75340 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 20:02:29.321  INFO 75340 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 20:02:29.323  INFO 75340 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 20:02:29.380  INFO 75340 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@204e90f7
+2022-08-29 20:02:29.565  INFO 75340 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182, port 9876
+2022-08-29 20:02:29.573  INFO 75340 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 20:02:30.103  INFO 75340 --- [main] com.example.orderservice.RMQ.Consumer    : consumer start success
+2022-08-29 20:02:30.108  INFO 75340 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 20:02:30.109  INFO 75340 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 20:02:30.109  INFO 75340 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 20:02:30.113  INFO 75340 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@204e90f7
+2022-08-29 20:02:30.123  INFO 75340 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182, port 9876
+2022-08-29 20:02:30.124  INFO 75340 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 20:02:30.130  INFO 75340 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 20:02:30.199  WARN 75340 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 20:02:30.210  WARN 75340 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 20:02:30.210  INFO 75340 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 20:02:30.225  WARN 75340 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 20:02:30.225  INFO 75340 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 20:02:30.410  INFO 75340 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 20:02:30.676  INFO 75340 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@68f4865: startup date [Mon Aug 29 20:02:26 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4466af20
+2022-08-29 20:02:30.884  INFO 75340 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[POST]}" onto public com.example.orderservice.Result.CodeMsg com.example.orderservice.Controller.OrderController.setOrder(com.example.orderservice.Data.Order.OrderInfo,javax.servlet.http.HttpServletRequest)
+2022-08-29 20:02:30.888  INFO 75340 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 20:02:30.898  INFO 75340 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 20:02:30.972  INFO 75340 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 20:02:30.972  INFO 75340 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 20:02:31.014  INFO 75340 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-29 20:02:31.411  INFO 75340 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-29 20:02:31.622  INFO 75340 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-29 20:02:31.630  INFO 75340 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-29 20:02:31.631  INFO 75340 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-29 20:02:31.632  INFO 75340 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-29 20:02:31.636  INFO 75340 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-29 20:02:31.652  INFO 75340 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-29 20:02:31.661  INFO 75340 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68f4865,type=ConfigurationPropertiesRebinder]
+2022-08-29 20:02:31.682  INFO 75340 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-29 20:02:31.721  INFO 75340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2022-08-29 20:02:31.742  INFO 75340 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='order', name='application', tags=[secure=false], address='10.70.176.182', port=8090, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://10.70.176.182:8090/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-29 20:02:31.775  INFO 75340 --- [main] c.e.o.OrderserviceApplication            : Started OrderserviceApplication in 5.83 seconds (JVM running for 6.553)
+2022-08-29 20:02:31.779  INFO 75340 --- [main] c.e.database.Datasource.DataSource       : start init mybatis connection pool,service: mysql
+2022-08-29 20:02:31.780  INFO 75340 --- [main] c.e.database.Discover.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@204e90f7
+2022-08-29 20:02:31.785  INFO 75340 --- [main] c.e.database.Datasource.DataSource       : service host10.70.176.182,servie port3306
+2022-08-29 20:02:31.789  INFO 75340 --- [main] com.example.database.Datasource.Builder  : datasource url is jdbc:mysql://10.70.176.182:3306/myDatas?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+2022-08-29 20:02:31.944  INFO 75340 --- [main] c.e.r.RedisDataSource.RedisService       : begin init redisDataSource, name=redis
+2022-08-29 20:02:31.948  INFO 75340 --- [main] c.e.r.DiscoverService.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@204e90f7
+2022-08-29 20:02:31.954  INFO 75340 --- [main] c.e.r.RedisDataSource.RedisService       : find instance,nameredis, host:10.70.176.182, port:8084 
+2022-08-29 20:02:32.008  INFO 75340 --- [main] c.e.r.RedisDataSource.RedisService       : get jedisPool success
+2022-08-29 20:02:32.053  INFO 75340 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2022-08-29 20:02:32.053  INFO 75340 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2022-08-29 20:02:32.078  INFO 75340 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2022-08-29 20:02:42.301  INFO 75340 --- [http-nio-8090-exec-4] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 20:02:42.327 ERROR 75340 --- [http-nio-8090-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer] with root cause
+
+java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer
+	at com.example.orderservice.Service.OrderService.setOrder(OrderService.java:24) ~[classes/:na]
+	at com.example.orderservice.Controller.OrderController.setOrder(OrderController.java:41) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_333]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_333]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_333]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_333]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_333]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_333]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_333]
+
+2022-08-29 20:02:50.001  INFO 75340 --- [Thread-15] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@68f4865: startup date [Mon Aug 29 20:02:26 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4466af20
+2022-08-29 20:02:50.003  INFO 75340 --- [Thread-15] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-29 20:02:50.004  INFO 75340 --- [Thread-15] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: order
+2022-08-29 20:02:50.011  INFO 75340 --- [Thread-15] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-29 20:02:50.012  INFO 75340 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-29 20:02:50.013  INFO 75340 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2022-08-29 20:03:18.243  INFO 75484 --- [main] c.e.o.OrderserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-29 20:03:18.265  INFO 75484 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@39d9314d: startup date [Mon Aug 29 20:03:18 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4a94ee4
+2022-08-29 20:03:18.949  INFO 75484 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=25961249-eff4-3ac0-b880-e3de751ca2a0
+2022-08-29 20:03:18.961  INFO 75484 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-29 20:03:19.061  INFO 75484 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$2de3e64e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-29 20:03:19.386  INFO 75484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2022-08-29 20:03:19.444  INFO 75484 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-29 20:03:19.444  INFO 75484 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-29 20:03:19.467  INFO 75484 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/bytedance/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-08-29 20:03:19.581  INFO 75484 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-29 20:03:19.582  INFO 75484 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1317 ms
+2022-08-29 20:03:19.840  INFO 75484 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-29 20:03:19.847  INFO 75484 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-29 20:03:19.848  INFO 75484 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-29 20:03:19.848  INFO 75484 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-29 20:03:19.849  INFO 75484 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-29 20:03:20.987  INFO 75484 --- [main] com.example.orderservice.RMQ.Consumer    : begin consumer create
+2022-08-29 20:03:20.988  INFO 75484 --- [main] c.e.r.RmqService.ConsumerBuilder         : namesrv Name: rocketmq
+2022-08-29 20:03:20.991  INFO 75484 --- [main] c.e.r.RmqService.ConsumerBuilder         : begin init consumer group consumer, topic test, tagtest
+2022-08-29 20:03:21.042  INFO 75484 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@e4b6f47
+2022-08-29 20:03:21.244  INFO 75484 --- [main] c.e.r.RmqService.ConsumerBuilder         : find addr host: 10.70.176.182, port 9876
+2022-08-29 20:03:21.250  INFO 75484 --- [main] c.e.r.RmqService.ConsumerBuilder         : init consumer success
+2022-08-29 20:03:21.623  INFO 75484 --- [main] com.example.orderservice.RMQ.Consumer    : consumer start success
+2022-08-29 20:03:21.628  INFO 75484 --- [main] com.example.orderservice.RMQ.Producer    : begin producer create
+2022-08-29 20:03:21.629  INFO 75484 --- [main] c.e.r.RmqService.ProducerBuilder         : serviceName is rocketmq
+2022-08-29 20:03:21.629  INFO 75484 --- [main] c.e.r.RmqService.ProducerBuilder         : begin init producer, group test, timeout 10000
+2022-08-29 20:03:21.630  INFO 75484 --- [main] c.e.rmqconnect.Discover.DiscoverService  : discoveryClient: org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@e4b6f47
+2022-08-29 20:03:21.639  INFO 75484 --- [main] c.e.r.RmqService.ProducerBuilder         : find addr 10.70.176.182, port 9876
+2022-08-29 20:03:21.639  INFO 75484 --- [main] c.e.r.RmqService.ProducerBuilder         : init producer success
+2022-08-29 20:03:21.647  INFO 75484 --- [main] com.example.orderservice.RMQ.Producer    : producer start success
+2022-08-29 20:03:21.735  WARN 75484 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-29 20:03:21.741  WARN 75484 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 20:03:21.741  INFO 75484 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 20:03:21.758  WARN 75484 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-29 20:03:21.758  INFO 75484 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-29 20:03:21.899  INFO 75484 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 20:03:22.154  INFO 75484 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@39d9314d: startup date [Mon Aug 29 20:03:18 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4a94ee4
+2022-08-29 20:03:22.285  INFO 75484 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order],methods=[POST]}" onto public com.example.orderservice.Result.CodeMsg com.example.orderservice.Controller.OrderController.setOrder(com.example.orderservice.Data.Order.OrderInfo,javax.servlet.http.HttpServletRequest)
+2022-08-29 20:03:22.289  INFO 75484 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-29 20:03:22.289  INFO 75484 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-29 20:03:22.334  INFO 75484 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 20:03:22.349  INFO 75484 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-29 20:03:22.372  INFO 75484 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-29 20:03:22.734  INFO 75484 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-29 20:03:23.166  INFO 75484 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-29 20:03:23.177  INFO 75484 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-29 20:03:23.179  INFO 75484 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-29 20:03:23.180  INFO 75484 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-29 20:03:23.184  INFO 75484 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-29 20:03:23.209  INFO 75484 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-29 20:03:23.226  INFO 75484 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=39d9314d,type=ConfigurationPropertiesRebinder]
+2022-08-29 20:03:23.243  INFO 75484 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-29 20:03:23.296  INFO 75484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2022-08-29 20:03:23.317  INFO 75484 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='order', name='application', tags=[secure=false], address='10.70.176.182', port=8090, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://10.70.176.182:8090/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-29 20:03:23.361  INFO 75484 --- [main] c.e.o.OrderserviceApplication            : Started OrderserviceApplication in 6.14 seconds (JVM running for 6.563)
+2022-08-29 20:03:23.364  INFO 75484 --- [main] c.e.database.Datasource.DataSource       : start init mybatis connection pool,service: mysql
+2022-08-29 20:03:23.366  INFO 75484 --- [main] c.e.database.Discover.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@e4b6f47
+2022-08-29 20:03:23.372  INFO 75484 --- [main] c.e.database.Datasource.DataSource       : service host10.70.176.182,servie port3306
+2022-08-29 20:03:23.374  INFO 75484 --- [main] com.example.database.Datasource.Builder  : datasource url is jdbc:mysql://10.70.176.182:3306/myDatas?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+2022-08-29 20:03:23.498  INFO 75484 --- [main] c.e.r.RedisDataSource.RedisService       : begin init redisDataSource, name=redis
+2022-08-29 20:03:23.500  INFO 75484 --- [main] c.e.r.DiscoverService.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@e4b6f47
+2022-08-29 20:03:23.506  INFO 75484 --- [main] c.e.r.RedisDataSource.RedisService       : find instance,nameredis, host:10.70.176.182, port:8084 
+2022-08-29 20:03:23.540  INFO 75484 --- [main] c.e.r.RedisDataSource.RedisService       : get jedisPool success
+2022-08-29 20:03:26.151  INFO 75484 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2022-08-29 20:03:26.152  INFO 75484 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2022-08-29 20:03:26.172  INFO 75484 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2022-08-29 20:03:26.455  INFO 75484 --- [http-nio-8090-exec-1] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 20:03:47.520  INFO 75484 --- [http-nio-8090-exec-5] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 20:04:02.800  INFO 75484 --- [http-nio-8090-exec-8] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 20:04:07.974  INFO 75484 --- [http-nio-8090-exec-9] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 20:04:09.160  INFO 75484 --- [http-nio-8090-exec-2] c.e.o.Controller.OrderController         : begin set order, goodId is 1
+2022-08-29 20:06:56.452  INFO 75484 --- [Thread-15] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@39d9314d: startup date [Mon Aug 29 20:03:18 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4a94ee4
+2022-08-29 20:06:56.455  INFO 75484 --- [Thread-15] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-29 20:06:56.456  INFO 75484 --- [Thread-15] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: order
+2022-08-29 20:06:56.462  INFO 75484 --- [Thread-15] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-29 20:06:56.463  INFO 75484 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-29 20:06:56.464  INFO 75484 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans

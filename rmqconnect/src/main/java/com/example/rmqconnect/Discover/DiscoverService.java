@@ -11,7 +11,7 @@ public class DiscoverService {
     private static DiscoveryClient discoveryClient;
 
     public static List<ServiceInstance> getServiceList(String name) {
-        logger.info("discoveryClient{}",discoveryClient);
+        logger.info("discoveryClient: {}",discoveryClient);
         return discoveryClient.getInstances(name);
     }
 
