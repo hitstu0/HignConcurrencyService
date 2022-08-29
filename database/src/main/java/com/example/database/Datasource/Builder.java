@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
+import org.apache.ibatis.type.TypeAliasRegistry;
 import org.slf4j.Logger;
 
 public class Builder {
@@ -44,9 +45,15 @@ public class Builder {
         configuration.addMapper(clazz);
     }
     
+    static void addAlias(String alias, Class<?> clazz) {
+        TypeAliasRegistry registry = configuration.getTypeAliasRegistry();
+        registry.registerAlias(alias, clazz);
+    }
+
     static SqlSessionFactory getSqlSessionFactory() {
         return new SqlSessionFactoryBuilder().build(configuration);
     }
-
+   
+    
 
 }

@@ -57,4 +57,7 @@ public class DataSource {
         return Builder.getSqlSessionFactory();
     }
     
+    public static void addAlias(String alias, Class<?> clazz) {
+        Builder.addAlias(alias, clazz);
+    }
 }
