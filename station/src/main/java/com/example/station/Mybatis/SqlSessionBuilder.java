@@ -1,4 +1,4 @@
-package com.example.orderservice.Mybatis;
+package com.example.station.Mybatis;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,6 +8,8 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Component;
 
 import com.example.database.Datasource.DataSource;
+import com.example.station.Data.OrderInfo;
+import com.example.station.Mybatis.Mapper.OrderMapper;
 
 @Component
 public class SqlSessionBuilder implements CommandLineRunner{
@@ -28,12 +30,12 @@ public class SqlSessionBuilder implements CommandLineRunner{
         factory = dataSource.getSqlSessionFactory();
     }
 
-    private void addMapper() {
-       // DataSource.addMapper(UserMapper.class);
+    private void addMapper() { 
+        DataSource.addMapper(OrderMapper.class);
     }
 
     private void addAlias() {
-       // DataSource.addAlias("userRegisterInfo", UserRegisterInfo.class);
+       DataSource.addAlias("orderInfo", OrderInfo.class);
     }
     
     public SqlSession getSqlSession() {

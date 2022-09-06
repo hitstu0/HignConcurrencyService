@@ -18,4 +18,6 @@ public class CodeMsg {
     public static CodeMsg REQUEST_USER_NOT_FOUND = new CodeMsg(100, "request user not found");
 
     public static CodeMsg GOOD_SHORT = new CodeMsg(200, "good sell out");
+
+    public static CodeMsg SEND_MSG_FAIL = new CodeMsg(300, "send msg fail");
 }

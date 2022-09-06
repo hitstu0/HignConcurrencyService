@@ -54,3 +54,141 @@
 2022-08-29 18:06:34.458  INFO 64414 --- [http-nio-8080-exec-9] c.e.l.Controller.LoginController         : login: userlogininfo: UserLoginInfo(mobile=12345, password=my)
 2022-08-29 18:09:10.057  INFO 64414 --- [http-nio-8080-exec-7] c.e.l.Controller.RegisterController      : register: UserRegisterInfo is UserRegisterInfo(name=yecheng, password=my, mobile=12345)
 2022-08-29 18:09:18.435  INFO 64414 --- [http-nio-8080-exec-9] c.e.l.Controller.LoginController         : login: userlogininfo: UserLoginInfo(mobile=12345, password=my)
+2022-08-30 11:06:13.886  INFO 3788 --- [main] c.e.l.LoginserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-30 11:06:13.920  INFO 3788 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51f49060: startup date [Tue Aug 30 11:06:13 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@39d76cb5
+2022-08-30 11:06:14.858  INFO 3788 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e68d7251-67c7-3935-b931-3c8402c8f298
+2022-08-30 11:06:14.889  INFO 3788 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-30 11:06:15.009  INFO 3788 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6cff43a9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-30 11:06:15.798  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 11:06:15.841  INFO 3788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 11:06:15.841  INFO 3788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-30 11:06:15.862  INFO 3788 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java11\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Java11\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Java11\bin;D:\Java11\jre\bin;D:\office\Lib\xuggler\bin;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Server 8.0\bin;D:\jmeter\apache-jmeter-5.4.1\bin;D:\Go\bin;C:\User\yecheng\go\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\yecheng\AppData\Local\Microsoft\WindowsApps;;C:\Users\yecheng\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yecheng\.dotnet\tools;C:\Users\yecheng\go\bin;.]
+2022-08-30 11:06:16.086  INFO 3788 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 11:06:16.086  INFO 3788 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2166 ms
+2022-08-30 11:06:16.290  INFO 3788 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-30 11:06:16.295  INFO 3788 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-30 11:06:16.295  INFO 3788 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-30 11:06:16.300  INFO 3788 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-30 11:06:16.301  INFO 3788 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-30 11:06:18.268  WARN 3788 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-30 11:06:18.287  WARN 3788 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-30 11:06:18.288  INFO 3788 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-30 11:06:18.292  WARN 3788 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-30 11:06:18.292  INFO 3788 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-30 11:06:18.388  INFO 3788 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-30 11:06:18.601  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51f49060: startup date [Tue Aug 30 11:06:13 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@39d76cb5
+2022-08-30 11:06:18.710  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public com.example.loginservice.Result.CodeMsg com.example.loginservice.Controller.LoginController.login(javax.servlet.http.HttpServletResponse,com.example.loginservice.Data.User.UserLoginInfo)
+2022-08-30 11:06:18.713  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public com.example.loginservice.Result.CodeMsg com.example.loginservice.Controller.RegisterController.register(com.example.loginservice.Data.User.UserRegisterInfo)
+2022-08-30 11:06:18.717  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-30 11:06:18.719  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-30 11:06:18.753  INFO 3788 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-30 11:06:18.754  INFO 3788 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-30 11:06:18.774  INFO 3788 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-30 11:06:19.111  INFO 3788 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-30 11:06:19.307  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-30 11:06:19.333  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-30 11:06:19.335  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-30 11:06:19.337  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-30 11:06:19.341  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-30 11:06:19.361  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-30 11:06:19.375  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=51f49060,type=ConfigurationPropertiesRebinder]
+2022-08-30 11:06:19.389  INFO 3788 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-30 11:06:19.451  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 11:06:19.468  INFO 3788 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='register', name='application', tags=[secure=false], address='host.docker.internal', port=8080, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://host.docker.internal:8080/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-30 11:06:19.520  INFO 3788 --- [main] c.e.l.LoginserviceApplication            : Started LoginserviceApplication in 8.209 seconds (JVM running for 8.849)
+2022-08-30 11:06:19.526  INFO 3788 --- [main] c.e.database.Datasource.DataSource       : start init mybatis connection pool,service: mysql
+2022-08-30 11:06:19.528  INFO 3788 --- [main] c.e.database.Discover.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@1eb85a47
+2022-08-30 11:06:19.537 ERROR 3788 --- [main] c.e.database.Datasource.DataSource       : service: mysql not found
+2022-08-30 11:06:19.540  INFO 3788 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-30 11:06:19.551 ERROR 3788 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:781) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at com.example.loginservice.LoginserviceApplication.main(LoginserviceApplication.java:15) ~[classes/:na]
+Caused by: com.example.database.Exception.ServiceNotFoundException: service: mysql not found
+	at com.example.database.Datasource.DataSource.init(DataSource.java:40) ~[database-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at com.example.loginservice.Mybatis.SqlSessionFactory.SqlSessionBuilder.run(SqlSessionBuilder.java:26) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	... 5 common frames omitted
+
+2022-08-30 11:06:19.556  INFO 3788 --- [main] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51f49060: startup date [Tue Aug 30 11:06:13 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@39d76cb5
+2022-08-30 11:06:19.559  INFO 3788 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-30 11:06:19.560  INFO 3788 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: register
+2022-08-30 11:06:19.570  INFO 3788 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-30 11:06:19.572  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-30 11:06:19.574  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2022-08-30 11:06:47.180  INFO 6828 --- [main] c.e.l.LoginserviceApplication            : No active profile set, falling back to default profiles: default
+2022-08-30 11:06:47.185  INFO 6828 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5aceec94: startup date [Tue Aug 30 11:06:47 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@59e2d8e3
+2022-08-30 11:06:48.094  INFO 6828 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e68d7251-67c7-3935-b931-3c8402c8f298
+2022-08-30 11:06:48.121  INFO 6828 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2022-08-30 11:06:48.229  INFO 6828 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1720311e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-30 11:06:48.976  INFO 6828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 11:06:49.029  INFO 6828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 11:06:49.030  INFO 6828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2022-08-30 11:06:49.045  INFO 6828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java11\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Java11\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Java11\bin;D:\Java11\jre\bin;D:\office\Lib\xuggler\bin;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Server 8.0\bin;D:\jmeter\apache-jmeter-5.4.1\bin;D:\Go\bin;C:\User\yecheng\go\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\yecheng\AppData\Local\Microsoft\WindowsApps;;C:\Users\yecheng\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yecheng\.dotnet\tools;C:\Users\yecheng\go\bin;.]
+2022-08-30 11:06:49.273  INFO 6828 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 11:06:49.273  INFO 6828 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2088 ms
+2022-08-30 11:06:49.459  INFO 6828 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2022-08-30 11:06:49.480  INFO 6828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-08-30 11:06:49.482  INFO 6828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-08-30 11:06:49.483  INFO 6828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-08-30 11:06:49.484  INFO 6828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-08-30 11:06:51.342  WARN 6828 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-30 11:06:51.358  WARN 6828 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-30 11:06:51.359  INFO 6828 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-30 11:06:51.367  WARN 6828 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-30 11:06:51.368  INFO 6828 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-30 11:06:51.457  INFO 6828 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-30 11:06:51.673  INFO 6828 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5aceec94: startup date [Tue Aug 30 11:06:47 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@59e2d8e3
+2022-08-30 11:06:51.777  INFO 6828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public com.example.loginservice.Result.CodeMsg com.example.loginservice.Controller.LoginController.login(javax.servlet.http.HttpServletResponse,com.example.loginservice.Data.User.UserLoginInfo)
+2022-08-30 11:06:51.781  INFO 6828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public com.example.loginservice.Result.CodeMsg com.example.loginservice.Controller.RegisterController.register(com.example.loginservice.Data.User.UserRegisterInfo)
+2022-08-30 11:06:51.784  INFO 6828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-08-30 11:06:51.787  INFO 6828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-08-30 11:06:51.819  INFO 6828 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-30 11:06:51.820  INFO 6828 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-08-30 11:06:51.843  INFO 6828 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in myExceptionHandler
+2022-08-30 11:06:52.152  INFO 6828 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'catalogWatchTaskScheduler'
+2022-08-30 11:06:52.361  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-08-30 11:06:52.373  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-08-30 11:06:52.376  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-08-30 11:06:52.378  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-08-30 11:06:52.384  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-08-30 11:06:52.403  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-08-30 11:06:52.420  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=5aceec94,type=ConfigurationPropertiesRebinder]
+2022-08-30 11:06:52.437  INFO 6828 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-08-30 11:06:52.509  INFO 6828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 11:06:52.531  INFO 6828 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='register', name='application', tags=[secure=false], address='host.docker.internal', port=8080, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://host.docker.internal:8080/actuator/health', tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-08-30 11:06:52.592  INFO 6828 --- [main] c.e.l.LoginserviceApplication            : Started LoginserviceApplication in 7.891 seconds (JVM running for 8.533)
+2022-08-30 11:06:52.598  INFO 6828 --- [main] c.e.database.Datasource.DataSource       : start init mybatis connection pool,service: mysql
+2022-08-30 11:06:52.601  INFO 6828 --- [main] c.e.database.Discover.DiscoverService    : discoveryClientorg.springframework.cloud.client.discovery.composite.CompositeDiscoveryClient@3de79067
+2022-08-30 11:06:52.611 ERROR 6828 --- [main] c.e.database.Datasource.DataSource       : service: mysql not found
+2022-08-30 11:06:52.615  INFO 6828 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-30 11:06:52.626 ERROR 6828 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:781) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	at com.example.loginservice.LoginserviceApplication.main(LoginserviceApplication.java:15) ~[classes/:na]
+Caused by: com.example.database.Exception.ServiceNotFoundException: service: mysql not found
+	at com.example.database.Datasource.DataSource.init(DataSource.java:40) ~[database-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at com.example.loginservice.Mybatis.SqlSessionFactory.SqlSessionBuilder.run(SqlSessionBuilder.java:26) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797) ~[spring-boot-2.0.2.RELEASE.jar:2.0.2.RELEASE]
+	... 5 common frames omitted
+
+2022-08-30 11:06:52.631  INFO 6828 --- [main] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5aceec94: startup date [Tue Aug 30 11:06:47 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@59e2d8e3
+2022-08-30 11:06:52.635  INFO 6828 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2022-08-30 11:06:52.636  INFO 6828 --- [main] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: register
+2022-08-30 11:06:52.653  INFO 6828 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'catalogWatchTaskScheduler'
+2022-08-30 11:06:52.654  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2022-08-30 11:06:52.656  INFO 6828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
